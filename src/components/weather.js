@@ -1,12 +1,21 @@
 import React from "react";
-import { Container } from 'semantic-ui-react';
+import { Container, Button } from 'semantic-ui-react';
 import moment from "moment/moment";
+
+const refresh = () => {
+  window.location.reload();
+}
 
 const WeatherCard = ({weatherData}) => {
   return (
     <Container className="weather-card">
       <div className="main">
-        <p className="header">{weatherData.name}</p>
+
+        <div className="top">
+          <p className="header">{weatherData.name}</p>
+          <Button className="button" inverted color='blue' circular icon='refresh' onClick={refresh} />
+        </div>
+
         <div className="data">
           <div className="flex">
             <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p>
