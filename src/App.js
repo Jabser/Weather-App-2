@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import WeatherCard from './components/weather';
+// import WeatherCard from './components/weather';
+import WeatherUI from './components/WeatherUI';
 import { Dimmer, Loader } from 'semantic-ui-react';
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
   return (
     <div className="App">
       {(typeof data.main != 'undefined') ? (
-        <WeatherCard weatherData={data} />
+        <WeatherUI weatherData={data} />
       ): (
         <div>
           <Dimmer active>
